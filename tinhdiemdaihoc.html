@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Tính điểm đại học khối D</h2>
+    <table border="0">
+        <tr>
+            <td>
+                <form>
+                    Điểm Toán:
+            </td>
+            <td>
+                <form>
+                    <input type="text" name="diemtoan" id="diemtoan">
+            </td>
+        </tr>
+        <tr>
+            <td> Điểm Văn:</td>
+            <td>
+                <form>
+                    <input type="text" name="diemvan" id="diemvan">
+            </td>
+            </form>
+        </tr>
+        <tr>
+            <td>Điểm Anh Văn</td>
+            <td>
+                <form>
+                    <input type="text" name="diemanh" id="diemanh">
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>Khu vực</td>
+            <td><select id="khuvuc">
+                    <option>KV1</option>
+                    <option>KV2</option>
+                    <option>KV2-NT</option>
+                    <option>KV3</option>
+                </select></td>
+        </tr>
+    </table><br>
+    <button type="button" onclick="myFunction()">Tính điểm</button>
+    <p id="c" style="color:red">Tổng điểm đại học khối D của bạn là: </p>
+    <script>
+        function myFunction() {
+            let khuvuc = document.getElementById("khuvuc").value;
+            let diemtoan = +document.getElementById("diemtoan").value;
+            let diemvan = +document.getElementById("diemvan").value;
+            let diemanh = +document.getElementById("diemanh").value;
+            let a = diemtoan + diemvan + diemanh;
+            switch (khuvuc) {
+                case "KV1":
+                    b = 0.75; break;
+                case "KV2":
+                    b = 0.5; break;
+                case "KV2-NT":
+                    b = 0.25; break;
+                case "KV3":
+                    b = 0; break;
+            }
+            let c = b + a;
+            document.getElementById("c").innerHTML = "Tổng điểm đại học khối D của bạn là: " + c;
+        }
+    </script>
+
+</body>
+
+</html>
